@@ -182,3 +182,55 @@ const sectionObs = new IntersectionObserver((entries) => {
 }, { rootMargin: '-40% 0px -55% 0px' });
 
 sections.forEach(s => sectionObs.observe(s));
+
+/* ─── THEME TOGGLE ─── */
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon   = themeToggle.querySelector('i');
+
+if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    themeIcon.className = 'fas fa-sun';
+}
+
+themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light');
+    themeIcon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+    themeToggle.setAttribute('aria-label', isLight ? 'Toggle dark mode' : 'Toggle light mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
+
+/* ─── COPY TO CLIPBOARD ─── */
+document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+            btn.classList.add('copied');
+            setTimeout(() => btn.classList.remove('copied'), 2000);
+        });
+    });
+});
+
+/* ─── CONTACT FORM ─── */
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = contactForm.querySelector('.form-submit');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i>Sending…';
+        try {
+            await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(contactForm)).toString()
+            });
+            contactForm.innerHTML = `
+                <div class="form-success">
+                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                    <p>Message sent! I'll get back to you within 24 hours.</p>
+                </div>`;
+        } catch {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i>Send Message';
+        }
+    });
+}
