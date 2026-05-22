@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shambhu Nath Jha — Senior Full-Stack Engineer</title>
+    <meta name="description" content="Senior Full-Stack Engineer with 7+ years in Healthcare IT. Specialising in Angular, Node.js and AWS — end-to-end ownership from architecture to deployment.">
+    <meta name="author" content="Shambhu Nath Jha">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#07070f">
+
+    <!-- Open Graph (social sharing) -->
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="Shambhu Nath Jha — Senior Full-Stack Engineer">
+    <meta property="og:description" content="Senior Full-Stack Engineer with 7+ years in Healthcare IT. Angular, Node.js, AWS — end-to-end ownership from architecture to deployment.">
+    <meta property="og:image"       content="./assets/shambhu-jha.png">
+    <meta property="og:locale"      content="en_IN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Shambhu Nath Jha — Senior Full-Stack Engineer">
+    <meta name="twitter:description" content="Senior Full-Stack Engineer with 7+ years in Healthcare IT. Angular, Node.js, AWS.">
+    <meta name="twitter:image"       content="./assets/shambhu-jha.png">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="alternate icon"           href="./assets/favicon.svg">
+
+    <!-- Fonts — only weights actually used in CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect"   href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"   href="./css/styles.css">
+
+    <!-- Structured data — Person schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Shambhu Nath Jha",
+      "jobTitle": "Senior Full-Stack Engineer",
+      "email": "shambhu.jha014@gmail.com",
+      "telephone": "+916281399382",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressCountry": "IN"
+      },
+      "sameAs": ["https://www.linkedin.com/in/shambhu-jha014"],
+      "knowsAbout": ["Angular", "TypeScript", "Node.js", "AWS", "RxJS", "PostgreSQL", "MongoDB", "Healthcare IT", "Cypress"]
+    }
+    </script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ── NAV ───────────────────────────────────── -->
+<nav id="nav" aria-label="Primary navigation">
+    <div class="container nav-wrap">
+        <ul class="nav-links">
+            <li><a href="#about"><span aria-hidden="true">01.</span>About</a></li>
+            <li><a href="#skills"><span aria-hidden="true">02.</span>Skills</a></li>
+            <li><a href="#experience"><span aria-hidden="true">03.</span>Experience</a></li>
+            <li><a href="#projects"><span aria-hidden="true">04.</span>Projects</a></li>
+            <li><a href="#contact"><span aria-hidden="true">05.</span>Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="./assets/resume.pdf" target="_blank" rel="noopener" class="nav-resume"><i class="fas fa-file-pdf" aria-hidden="true"></i>Resume</a>
+            <a href="mailto:shambhu.jha014@gmail.com" class="nav-hire">Hire Me</a>
+        </div>
+        <button class="ham" id="ham" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobMenu">
+            <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+    </div>
+</nav>
+
+<nav class="mob-menu" id="mobMenu" aria-label="Mobile navigation" aria-hidden="true">
+    <ul>
+        <li><a href="#about"      onclick="closeMob()">01. About</a></li>
+        <li><a href="#skills"     onclick="closeMob()">02. Skills</a></li>
+        <li><a href="#experience" onclick="closeMob()">03. Experience</a></li>
+        <li><a href="#projects"   onclick="closeMob()">04. Projects</a></li>
+        <li><a href="#contact"    onclick="closeMob()">05. Contact</a></li>
+        <li><a href="./assets/resume.pdf" target="_blank" rel="noopener" onclick="closeMob()"><i class="fas fa-file-pdf" aria-hidden="true"></i> Resume</a></li>
+    </ul>
+</nav>
+
+<main id="main-content">
+
+<!-- ── HERO ──────────────────────────────────── -->
+<section id="hero">
+    <canvas id="c" aria-hidden="true" role="presentation"></canvas>
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+        <p class="hero-eyebrow">Hello, World. My name is</p>
+        <h1 class="hero-name">
+            Shambhu Nath Jha
+            <em>Full-Stack Engineer.</em>
+        </h1>
+        <div class="hero-sub" aria-live="polite" aria-atomic="true">
+            I craft&nbsp;<span id="tw"></span><span class="cursor-blink" aria-hidden="true"></span>
+        </div>
+        <p class="hero-desc">
+            Senior Full-Stack Engineer with 7+ years building production-critical enterprise
+            applications in Healthcare IT. Angular frontends, Node.js backends, AWS cloud —
+            end-to-end ownership from architecture to deployment.
+            <br><span class="hero-location">🇮🇳 Based in Hyderabad, India</span>
+        </p>
+        <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket" aria-hidden="true"></i>View My Work</a>
+            <a href="#contact"  class="btn btn-ghost"><i class="fas fa-paper-plane" aria-hidden="true"></i>Get In Touch</a>
+            <a href="./assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fas fa-file-pdf" aria-hidden="true"></i>View Resume</a>
+        </div>
+        <div class="hero-stats">
+            <div>
+                <div class="stat-n" data-t="7">0</div>
+                <div class="stat-l">Years Exp</div>
+            </div>
+            <div>
+                <div class="stat-n" data-t="5">0</div>
+                <div class="stat-l">Products</div>
+            </div>
+            <div>
+                <div class="stat-n" data-t="9">0</div>
+                <div class="stat-l">× Perf Gain</div>
+            </div>
+            <div>
+                <div class="stat-n" data-t="4">0</div>
+                <div class="stat-l">Companies</div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────── -->
+<section id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="photo-wrap sr-l">
+                <div class="photo-inner">
+                    <img src="./assets/shambhu-jha.png" alt="Shambhu Nath Jha — Senior Full-Stack Engineer based in Hyderabad, India" loading="lazy" decoding="async" width="520" height="520" onerror="this.parentElement.style.background='linear-gradient(135deg,#0d0d1c,#1a1a2e)';this.style.display='none'">
+                </div>
+                <div class="photo-frame"></div>
+                <div class="exp-badge">
+                    <span class="n">7+</span>
+                    <span class="l">Years of<br>Excellence</span>
+                </div>
+            </div>
+
+            <div class="about-text sr-r">
+                <div class="chip">01. Get To Know Me</div>
+                <h2 class="section-title">Building Systems That<br><em class="gt">Actually Scale.</em></h2>
+                <br>
+                <p>I'm a Senior Full-Stack Engineer based in Hyderabad, India, specializing in enterprise-grade
+                Angular frontends, Node.js backends, and AWS deployments — primarily in environments
+                where the stakes are high and the architecture must be flawless.</p>
+                <p>Most of my career has been in Healthcare IT, building and evolving systems that support complex
+                clinical workflows, where reliability, data integrity, and long-term maintainability aren't optional —
+                they're the baseline.</p>
+                <p>Beyond hands-on development, I lead teams, own architecture decisions, drive testing culture,
+                and mentor engineers — delivering features predictably in SAFe Agile and Kanban environments.</p>
+
+                <div class="about-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Location</div>
+                        <div class="meta-value">🇮🇳 Hyderabad, India</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Experience</div>
+                        <div class="meta-value">7+ Years</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Domain</div>
+                        <div class="meta-value">Healthcare IT</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Degree</div>
+                        <div class="meta-value">B.Tech, BPUT Odisha</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Methodology</div>
+                        <div class="meta-value">SAFe Agile / Kanban</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Status</div>
+                        <div class="meta-value meta-value-open">Open to Opportunities</div>
+                    </div>
+                </div>
+
+                <a href="mailto:shambhu.jha014@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>Let's Collaborate
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── SKILLS ────────────────────────────────── -->
+<section id="skills">
+    <div class="container">
+        <div class="skills-hd sr">
+            <div class="chip">02. Technical Arsenal</div>
+            <h2 class="section-title">Skills &amp; Technologies</h2>
+            <p>A production-tested stack built across enterprise Healthcare, Analytics, and Platform engineering.</p>
+        </div>
+
+        <div class="skill-group sr">
+            <div class="group-label">Frontend</div>
+            <div class="tags">
+                <span class="tag"><i class="fab fa-angular"></i>Angular (v2–16+)</span>
+                <span class="tag"><i class="fas fa-code"></i>TypeScript</span>
+                <span class="tag"><i class="fab fa-js-square"></i>JavaScript ES6+</span>
+                <span class="tag"><i class="fas fa-atom"></i>RxJS</span>
+                <span class="tag"><i class="fas fa-layer-group"></i>Angular Material</span>
+                <span class="tag"><i class="fab fa-html5"></i>HTML5</span>
+                <span class="tag"><i class="fab fa-css3-alt"></i>CSS3</span>
+                <span class="tag"><i class="fas fa-chart-area"></i>D3.js</span>
+                <span class="tag"><i class="fas fa-chart-pie"></i>Chart.js</span>
+                <span class="tag"><i class="fas fa-mobile-alt"></i>PWA</span>
+            </div>
+        </div>
+
+        <div class="skill-group sr">
+            <div class="group-label">Backend</div>
+            <div class="tags">
+                <span class="tag"><i class="fab fa-node-js"></i>Node.js</span>
+                <span class="tag"><i class="fas fa-server"></i>Express.js</span>
+                <span class="tag"><i class="fas fa-database"></i>InterSystems Cache</span>
+                <span class="tag"><i class="fas fa-plug"></i>RESTful APIs</span>
+                <span class="tag"><i class="fas fa-bolt"></i>Socket.IO</span>
+                <span class="tag"><i class="fas fa-lock"></i>JWT / OAuth2</span>
+            </div>
+        </div>
+
+        <div class="skill-group sr">
+            <div class="group-label">Databases</div>
+            <div class="tags">
+                <span class="tag"><i class="fas fa-database"></i>PostgreSQL</span>
+                <span class="tag"><i class="fas fa-leaf"></i>MongoDB</span>
+                <span class="tag"><i class="fas fa-table"></i>SQL Server</span>
+            </div>
+        </div>
+
+        <div class="skill-group sr">
+            <div class="group-label">Cloud &amp; DevOps</div>
+            <div class="tags">
+                <span class="tag"><i class="fab fa-aws"></i>AWS EC2</span>
+                <span class="tag"><i class="fab fa-aws"></i>AWS S3</span>
+                <span class="tag"><i class="fab fa-aws"></i>AWS IAM</span>
+                <span class="tag"><i class="fas fa-infinity"></i>CI/CD Pipelines</span>
+                <span class="tag"><i class="fab fa-linux"></i>Linux</span>
+                <span class="tag"><i class="fas fa-vial"></i>Cypress E2E</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── EXPERIENCE ────────────────────────────── -->
+<section id="experience">
+    <div class="container">
+        <div class="exp-hd sr">
+            <div class="chip">03. Work History</div>
+            <h2 class="section-title">Where I've Worked</h2>
+        </div>
+
+        <div class="tl">
+            <!-- SIS — LEFT -->
+            <div class="tl-item sr">
+                <div class="glass tl-card">
+                    <div class="exp-co">Surgical Information Systems</div>
+                    <div class="exp-role">Senior Software Engineer</div>
+                    <div class="exp-date"><i class="far fa-calendar" aria-hidden="true"></i>May 2023 – Present &nbsp;·&nbsp; Hyderabad</div>
+                    <ul class="exp-list">
+                        <li>Own technical direction and delivery for a 4-member engineering team — architecture, sprint execution, code quality</li>
+                        <li>Architected "Ignition", a high-concurrency Node.js automation platform for bulk healthcare data creation and load simulation</li>
+                        <li>Reduced data seeding time from 2.5 hours → 15–17 min — a <strong style="color:var(--cyan)">9× performance improvement</strong></li>
+                        <li>Engineered concurrency controls to safely execute thousands of API calls, preventing race conditions and DB deadlocks</li>
+                        <li>Collaborated with DevOps to deploy and operate applications on AWS with production monitoring</li>
+                        <li>Drove engineering best practices through code reviews, architecture discussions, and mentoring</li>
+                    </ul>
+                </div>
+                <div class="tl-mid" aria-hidden="true"><div class="tl-dot"></div></div>
+                <div class="tl-void"></div>
+            </div>
+
+            <!-- Quest — RIGHT -->
+            <div class="tl-item sr">
+                <div class="tl-void"></div>
+                <div class="tl-mid" aria-hidden="true"><div class="tl-dot"></div></div>
+                <div class="glass tl-card">
+                    <div class="exp-co">Quest Diagnostics</div>
+                    <div class="exp-role">Senior Software Engineer</div>
+                    <div class="exp-date"><i class="far fa-calendar" aria-hidden="true"></i>Feb 2020 – Apr 2023 &nbsp;·&nbsp; Hyderabad</div>
+                    <ul class="exp-list">
+                        <li>Owned end-to-end feature delivery across Angular frontend, InterSystems Cache backend, and Cypress test suites</li>
+                        <li>Built reusable Angular components that became the foundation for multiple enterprise healthcare workflows</li>
+                        <li>Implemented Progressive Web App (PWA) capabilities for improved performance and offline usability</li>
+                        <li>Led adoption of Cypress-based automation, significantly reducing dependency on manual regression testing</li>
+                        <li>Supported CI/CD pipelines and AWS deployments, ensuring stable releases across multiple environments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Prutech — LEFT -->
+            <div class="tl-item sr">
+                <div class="glass tl-card">
+                    <div class="exp-co">Prutech Solutions</div>
+                    <div class="exp-role">Software Engineer</div>
+                    <div class="exp-date"><i class="far fa-calendar" aria-hidden="true"></i>Nov 2018 – Nov 2019 &nbsp;·&nbsp; Hyderabad</div>
+                    <ul class="exp-list">
+                        <li>Developed interactive data visualization dashboards using D3.js and Chart.js for enterprise analytics</li>
+                        <li>Built Angular-based single-page applications for enterprise analytics platforms</li>
+                        <li>Integrated Node.js APIs with SQL Server, ensuring reliable and performant data flow</li>
+                    </ul>
+                </div>
+                <div class="tl-mid" aria-hidden="true"><div class="tl-dot"></div></div>
+                <div class="tl-void"></div>
+            </div>
+
+            <!-- People Tech — RIGHT -->
+            <div class="tl-item sr">
+                <div class="tl-void"></div>
+                <div class="tl-mid" aria-hidden="true"><div class="tl-dot"></div></div>
+                <div class="glass tl-card">
+                    <div class="exp-co">People Tech Group</div>
+                    <div class="exp-role">Junior Software Engineer</div>
+                    <div class="exp-date"><i class="far fa-calendar" aria-hidden="true"></i>Oct 2017 – Aug 2018 &nbsp;·&nbsp; Hyderabad</div>
+                    <ul class="exp-list">
+                        <li>Built web applications using HTML, CSS, JavaScript, and Angular across enterprise clients</li>
+                        <li>Implemented real-time WebSocket notifications with Socket.IO for bi-directional communication</li>
+                        <li>Gained foundational exposure to Linux environments, databases, and enterprise SDLC practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── PROJECTS ───────────────────────────────── -->
+<section id="projects">
+    <div class="container">
+        <div class="proj-hd sr">
+            <div class="chip">04. Built With Purpose</div>
+            <h2 class="section-title">Featured Projects</h2>
+        </div>
+        <div class="proj-grid">
+            <div class="glass proj-card sr">
+                <div class="proj-num">01</div>
+                <div class="proj-period">June 2025 – Present</div>
+                <div class="proj-name">Ignition — Bulk Data Seeder</div>
+                <div class="proj-desc">A high-concurrency Node.js automation platform built internally to automate bulk healthcare data creation at scale. Engineered safe concurrency controls for thousands of API calls, cutting data seeding time from hours to minutes and standardizing automation across multiple teams.</div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Node.js</span>
+                    <span class="proj-tag">Concurrency</span>
+                    <span class="proj-tag">Healthcare</span>
+                    <span class="proj-tag">AWS</span>
+                    <span class="proj-tag">9× Speedup</span>
+                </div>
+            </div>
+            <div class="glass proj-card sr">
+                <div class="proj-num">02</div>
+                <div class="proj-period">May 2023 – Present</div>
+                <div class="proj-name">SIS Complete</div>
+                <div class="proj-desc">Enterprise Angular application powering surgical workflow management. Designed a reusable data-driven component system, led a new Angular team to 100% roadmap delivery on schedule, and drove organization-wide transition to Cypress automation.</div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Angular 16+</span>
+                    <span class="proj-tag">TypeScript</span>
+                    <span class="proj-tag">Cypress</span>
+                    <span class="proj-tag">RxJS</span>
+                </div>
+            </div>
+            <div class="glass proj-card sr">
+                <div class="proj-num">03</div>
+                <div class="proj-period">Feb 2020 – Apr 2023</div>
+                <div class="proj-name">Quanum® Lab Services Manager</div>
+                <div class="proj-desc">Full-stack healthcare solution for Quest Diagnostics lab workflow management. Built with Angular, Node.js, and InterSystems Cache. Implemented API-level caching to reduce redundant network calls and improve responsiveness. Delivered under SAFe Agile with cross-team coordination.</div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Angular</span>
+                    <span class="proj-tag">Node.js</span>
+                    <span class="proj-tag">InterSystems Cache</span>
+                    <span class="proj-tag">PWA</span>
+                </div>
+            </div>
+            <div class="glass proj-card sr">
+                <div class="proj-num">04</div>
+                <div class="proj-period">Nov 2018 – Nov 2019</div>
+                <div class="proj-name">Sentiment 360</div>
+                <div class="proj-desc">Replaced static tabular reports with interactive data visualization dashboards using D3.js and Chart.js, dramatically improving clarity and enabling faster decision-making for business stakeholders across the analytics platform.</div>
+                <div class="proj-tags">
+                    <span class="proj-tag">D3.js</span>
+                    <span class="proj-tag">Chart.js</span>
+                    <span class="proj-tag">Angular</span>
+                    <span class="proj-tag">Data Visualization</span>
+                </div>
+            </div>
+            <div class="glass proj-card sr">
+                <div class="proj-num">05</div>
+                <div class="proj-period">Oct 2017 – Aug 2018</div>
+                <div class="proj-name">Ubikite — DaaS Manager</div>
+                <div class="proj-desc">Implemented real-time WebSocket-based notifications via Socket.IO, eliminating frequent page refreshes and enabling bi-directional live updates. Integrated Microsoft-based authentication on the Angular frontend, replacing a basic OAuth 2.0 login flow.</div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Angular</span>
+                    <span class="proj-tag">Socket.IO</span>
+                    <span class="proj-tag">OAuth2</span>
+                    <span class="proj-tag">WebSockets</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── CERTIFICATIONS ─────────────────────────── -->
+<section id="certs">
+    <div class="container">
+        <div class="cert-hd sr">
+            <div class="chip">Credentials</div>
+            <h2 class="section-title">Certifications &amp; Awards</h2>
+        </div>
+        <div class="cert-grid">
+            <div class="glass cert-card sr">
+                <div class="cert-ico"><i class="fas fa-certificate"></i></div>
+                <div>
+                    <div class="cert-name">Certified SAFe® 5 Practitioner</div>
+                    <div class="cert-org">Scaled Agile, Inc.</div>
+                </div>
+            </div>
+            <div class="glass cert-card sr">
+                <div class="cert-ico"><i class="fas fa-code"></i></div>
+                <div>
+                    <div class="cert-name">AMCAT Certified Software Engineer</div>
+                    <div class="cert-org">Product Engineering</div>
+                </div>
+            </div>
+            <div class="glass cert-card sr">
+                <div class="cert-ico"><i class="fas fa-laptop-code"></i></div>
+                <div>
+                    <div class="cert-name">AMCAT Certified Software Engineer</div>
+                    <div class="cert-org">IT Services</div>
+                </div>
+            </div>
+            <div class="glass cert-card sr">
+                <div class="cert-ico"><i class="fab fa-microsoft"></i></div>
+                <div>
+                    <div class="cert-name">.NET Certification</div>
+                    <div class="cert-org">Peers Technologies</div>
+                </div>
+            </div>
+            <div class="glass cert-card sr">
+                <div class="cert-ico"><i class="fas fa-database"></i></div>
+                <div>
+                    <div class="cert-name">Big Data Foundations — Level 1</div>
+                    <div class="cert-org">IBM Badge</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────── -->
+<section id="contact">
+    <div class="contact-glow" aria-hidden="true"></div>
+    <div class="container">
+        <div class="contact-inner sr">
+            <div class="contact-eyebrow">05. What's Next?</div>
+            <h2 class="contact-title">Let's Build Something <span class="gt">Great Together</span></h2>
+            <p class="contact-desc">
+                Whether you have an exciting opportunity, a complex product to build, or just want to
+                connect with a senior engineer who cares about craft and quality — I'm all ears.
+                My inbox is always open.
+            </p>
+            <div class="contact-cards">
+                <a href="mailto:shambhu.jha014@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>shambhu.jha014@gmail.com
+                </a>
+                <a href="tel:+916281399382" class="contact-card">
+                    <i class="fas fa-phone" aria-hidden="true"></i>+91-6281399382
+                </a>
+                <a href="https://www.linkedin.com/in/shambhu-jha014" target="_blank" rel="noopener" class="contact-card">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn Profile
+                </a>
+                <a href="./assets/resume.pdf" download="Shambhu_Nath_Jha_Resume.pdf" class="contact-card">
+                    <i class="fas fa-file-pdf" aria-hidden="true"></i>Download Resume
+                </a>
+            </div>
+            <div class="socials">
+                <a href="mailto:shambhu.jha014@gmail.com" class="soc" aria-label="Send an email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/shambhu-jha014" target="_blank" rel="noopener" class="soc" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="tel:+916281399382" class="soc" aria-label="Call +91-6281399382"><i class="fas fa-phone" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────── -->
+<footer>
+    <div class="container foot-inner">
+        <div class="foot-txt">Designed &amp; Coded by <span>Shambhu Nath Jha</span></div>
+        <a href="#hero" class="foot-back"><i class="fas fa-arrow-up" aria-hidden="true"></i>Back to Top</a>
+        <div class="foot-txt"><span>©</span> 2025–2026 · All rights reserved</div>
+    </div>
+</footer>
+
+<script src="./js/main.js"></script>
+</body>
+</html>
