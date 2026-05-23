@@ -409,8 +409,9 @@ button.ham { background:none; border:none; }
     flex-shrink:0; position:relative; z-index:1;
 }
 
-.exp-co   { font-family:var(--ff-mono); font-size:.7rem; color:var(--cyan); letter-spacing:.08em; margin-bottom:6px; }
-.exp-role { font-family:var(--ff-head); font-size:1.22rem; font-weight:700; color:var(--t1); margin-bottom:6px; }
+.exp-co     { font-family:var(--ff-mono); font-size:.7rem; color:var(--cyan); letter-spacing:.08em; margin-bottom:3px; }
+.exp-domain { font-family:var(--ff-mono); font-size:.65rem; color:var(--t3); margin-bottom:6px; }
+.exp-role   { font-family:var(--ff-head); font-size:1.22rem; font-weight:700; color:var(--t1); margin-bottom:6px; }
 .exp-date { font-family:var(--ff-mono); font-size:.68rem; color:var(--t3); display:flex; align-items:center; gap:6px; margin-bottom:14px; }
 .exp-date i { color:var(--purple); }
 .exp-list { list-style:none; display:flex; flex-direction:column; gap:7px; }
