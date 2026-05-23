@@ -568,8 +568,6 @@ body::before {
     .tl-item:nth-child(even) .tl-mid  { grid-column:1; grid-row:1; }
     .tl-item:nth-child(odd)  .tl-void,
     .tl-item:nth-child(even) .tl-void { display:none; }
-
-    .contact-grid { grid-template-columns:1fr; gap:32px; }
 }
 
 @media(max-width:600px) {
@@ -658,8 +656,12 @@ body.light .form-group textarea { background: rgba(0,0,0,.03); }
     gap:48px;
     align-items:start;
     max-width:960px;
-    margin:0 auto;
+    margin:40px auto 0;
     position:relative; z-index:1;
+}
+
+@media(max-width:900px) {
+    .contact-grid { grid-template-columns:1fr; gap:32px; }
 }
 
 .contact-left .contact-cards {
@@ -668,8 +670,6 @@ body.light .form-group textarea { background: rgba(0,0,0,.03); }
     gap:12px;
     margin-bottom:28px;
 }
-
-.contact-grid { margin-top:40px; }
 
 .contact-card.email-card { cursor:default; }
 .contact-card.email-card:hover { transform:none; }
