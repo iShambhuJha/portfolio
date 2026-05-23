@@ -78,6 +78,7 @@ window.addEventListener('resize', () => { resize(); buildParticles(); });
 const phrases = [
     'scalable Angular frontends.',
     'robust Node.js backends.',
+    'distributed NestJS services.',
     'high-concurrency systems.',
     'healthcare enterprise apps.',
     'production-grade AWS solutions.',
