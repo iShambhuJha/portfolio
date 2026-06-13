@@ -1,111 +1,3 @@
-/* ─── PARTICLE CANVAS ─── */
-const canvas = document.getElementById('c');
-const ctx    = canvas.getContext('2d');
-let pts = [];
-
-function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-class Particle {
-    constructor() { this.init(); }
-    init() {
-        this.x  = Math.random() * canvas.width;
-        this.y  = Math.random() * canvas.height;
-        this.r  = Math.random() * 1.8 + .4;
-        this.vx = (Math.random() - .5) * .35;
-        this.vy = (Math.random() - .5) * .35;
-        this.a  = Math.random() * .45 + .08;
-        this.c  = Math.random() > .5 ? '#22d3ee' : '#a855f7';
-    }
-    move() {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.init();
-    }
-    draw() {
-        ctx.save();
-        ctx.globalAlpha = this.a;
-        ctx.fillStyle   = this.c;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-    }
-}
-
-function buildParticles() {
-    pts = [];
-    const n = Math.min(Math.floor(canvas.width * canvas.height / 11000), 120);
-    for (let i = 0; i < n; i++) pts.push(new Particle());
-}
-
-function drawLines() {
-    for (let i = 0; i < pts.length; i++) {
-        for (let j = i + 1; j < pts.length; j++) {
-            const dx = pts[i].x - pts[j].x;
-            const dy = pts[i].y - pts[j].y;
-            const d  = Math.sqrt(dx * dx + dy * dy);
-            if (d < 130) {
-                ctx.save();
-                ctx.globalAlpha = (1 - d / 130) * .12;
-                ctx.strokeStyle = '#22d3ee';
-                ctx.lineWidth   = .6;
-                ctx.beginPath();
-                ctx.moveTo(pts[i].x, pts[i].y);
-                ctx.lineTo(pts[j].x, pts[j].y);
-                ctx.stroke();
-                ctx.restore();
-            }
-        }
-    }
-}
-
-function animateCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawLines();
-    pts.forEach(p => { p.move(); p.draw(); });
-    requestAnimationFrame(animateCanvas);
-}
-
-resize();
-buildParticles();
-animateCanvas();
-window.addEventListener('resize', () => { resize(); buildParticles(); });
-
-/* ─── TYPEWRITER ─── */
-const phrases = [
-    'scalable Angular frontends.',
-    'robust Node.js backends.',
-    'distributed NestJS services.',
-    'high-concurrency systems.',
-    'healthcare enterprise apps.',
-    'production-grade AWS solutions.',
-];
-let phraseIndex = 0, charIndex = 0, deleting = false;
-
-function typewriter() {
-    const current = phrases[phraseIndex];
-    const el      = document.getElementById('tw');
-    if (deleting) {
-        el.textContent = current.slice(0, --charIndex);
-        if (charIndex === 0) {
-            deleting     = false;
-            phraseIndex  = (phraseIndex + 1) % phrases.length;
-            return setTimeout(typewriter, 480);
-        }
-        return setTimeout(typewriter, 46);
-    }
-    el.textContent = current.slice(0, ++charIndex);
-    if (charIndex === current.length) {
-        deleting = true;
-        return setTimeout(typewriter, 2200);
-    }
-    setTimeout(typewriter, 95);
-}
-setTimeout(typewriter, 1400);
-
 /* ─── NAV SCROLL ─── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
@@ -144,32 +36,11 @@ document.querySelectorAll('.sr,.sr-l,.sr-r').forEach(el => {
     const siblings = Array.from(el.parentElement.children).filter(c =>
         c.classList.contains('sr') || c.classList.contains('sr-l') || c.classList.contains('sr-r')
     );
-    el.dataset.d = siblings.indexOf(el) * 90;
+    el.dataset.d = siblings.indexOf(el) * 80;
     revealObs.observe(el);
 });
 
-/* ─── COUNTERS ─── */
-function animateCounter(el, target) {
-    let current = 0;
-    const step  = target / 38;
-    (function run() {
-        current = Math.min(current + step, target);
-        el.textContent = Math.floor(current) + (current >= target ? '+' : '');
-        if (current < target) requestAnimationFrame(run);
-    })();
-}
-
-const statsObs = new IntersectionObserver((entries) => {
-    if (!entries[0].isIntersecting) return;
-    document.querySelectorAll('[data-t]').forEach(el => animateCounter(el, +el.dataset.t));
-    statsObs.disconnect();
-}, { threshold: .6 });
-
-const statsEl = document.querySelector('.hero-stats');
-if (statsEl) statsObs.observe(statsEl);
-
 /* ─── ACTIVE NAV HIGHLIGHT ─── */
-const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
 const sectionObs = new IntersectionObserver((entries) => {
@@ -177,27 +48,28 @@ const sectionObs = new IntersectionObserver((entries) => {
         if (e.isIntersecting) {
             navLinks.forEach(a => a.style.color = '');
             const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-            if (active) active.style.color = 'var(--cyan)';
+            if (active) active.style.color = 'var(--accent)';
         }
     });
 }, { rootMargin: '-40% 0px -55% 0px' });
 
-sections.forEach(s => sectionObs.observe(s));
+document.querySelectorAll('section[id]').forEach(s => sectionObs.observe(s));
 
-/* ─── THEME TOGGLE ─── */
+/* ─── THEME TOGGLE — light by default, dark opt-in ─── */
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon   = themeToggle.querySelector('i');
 
-if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light');
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
     themeIcon.className = 'fas fa-sun';
+    themeToggle.setAttribute('aria-label', 'Toggle light mode');
 }
 
 themeToggle.addEventListener('click', () => {
-    const isLight = document.body.classList.toggle('light');
-    themeIcon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
-    themeToggle.setAttribute('aria-label', isLight ? 'Toggle dark mode' : 'Toggle light mode');
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    const isDark = document.body.classList.toggle('dark');
+    themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    themeToggle.setAttribute('aria-label', isDark ? 'Toggle light mode' : 'Toggle dark mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
 /* ─── COPY TO CLIPBOARD ─── */
