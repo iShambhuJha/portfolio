@@ -55,18 +55,17 @@ const sectionObs = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('section[id]').forEach(s => sectionObs.observe(s));
 
-/* ─── THEME TOGGLE — light by default, dark opt-in ─── */
+/* ─── THEME TOGGLE — dark by default, light opt-in ─── */
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon   = themeToggle.querySelector('i');
 
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-    themeIcon.className = 'fas fa-sun';
-    themeToggle.setAttribute('aria-label', 'Toggle light mode');
-}
+/* The dark class is set pre-paint by an inline script in <head>. Sync the icon/label to it. */
+const startsDark = document.documentElement.classList.contains('dark');
+themeIcon.className = startsDark ? 'fas fa-sun' : 'fas fa-moon';
+themeToggle.setAttribute('aria-label', startsDark ? 'Toggle light mode' : 'Toggle dark mode');
 
 themeToggle.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark');
+    const isDark = document.documentElement.classList.toggle('dark');
     themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
     themeToggle.setAttribute('aria-label', isDark ? 'Toggle light mode' : 'Toggle dark mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');

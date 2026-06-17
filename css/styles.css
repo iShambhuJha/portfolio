@@ -25,8 +25,8 @@
     --ease:        cubic-bezier(.4,0,.2,1);
 }
 
-/* warm dark theme (opt-in) */
-body.dark {
+/* warm dark theme (default) */
+html.dark {
     --bg:          #14130f;
     --bg2:         #1a1915;
     --surface:     #1c1b16;
@@ -127,7 +127,7 @@ body {
     background:var(--accent);
     color:#fff;
 }
-body.dark .btn-primary { color:#11110d; }
+html.dark .btn-primary { color:#11110d; }
 .btn-primary:hover { transform:translateY(-2px); filter:brightness(1.06); }
 .btn-ghost {
     background:transparent; color:var(--t1);
@@ -303,9 +303,9 @@ button.ham { background:none; border:none; }
     box-shadow:var(--shadow);
 }
 .exp-badge .n { font-family:var(--ff-head); font-size:1.9rem; font-weight:600; color:#fff; display:block; line-height:1; }
-body.dark .exp-badge .n { color:#11110d; }
+html.dark .exp-badge .n { color:#11110d; }
 .exp-badge .l { font-size:.62rem; color:rgba(255,255,255,.85); text-transform:uppercase; letter-spacing:.08em; margin-top:5px; display:block; line-height:1.4; }
-body.dark .exp-badge .l { color:rgba(17,17,13,.7); }
+html.dark .exp-badge .l { color:rgba(17,17,13,.7); }
 
 .about-text p { color:var(--t2); line-height:1.85; margin-bottom:16px; font-size:1rem; }
 .about-meta {
@@ -676,7 +676,7 @@ footer { padding:30px 0; border-top:1px solid var(--border); }
     background:var(--accent);
     color:#fff;
 }
-body.dark .lab-btn-primary { color:#11110d; }
+html.dark .lab-btn-primary { color:#11110d; }
 .lab-btn-primary:hover, .lab-btn-primary:focus-visible {
     transform:translateY(-2px);
     filter:brightness(1.06);

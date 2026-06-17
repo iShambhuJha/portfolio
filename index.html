@@ -7,7 +7,7 @@
     <meta name="description" content="Senior Full-Stack Engineer with 7+ years building production-critical enterprise applications, predominantly in Healthcare IT. Specialising in Angular, Node.js and AWS - end-to-end ownership from architecture to deployment.">
     <meta name="author" content="Shambhu Nath Jha">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#fbfaf8">
+    <meta name="theme-color" content="#14130f">
 
     <!-- Open Graph (social sharing) -->
     <meta property="og:type"        content="website">
@@ -36,6 +36,13 @@
     <link rel="preconnect"   href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet"   href="./css/styles.css">
+
+    <!-- Set theme before paint to avoid a flash (dark is default) -->
+    <script>
+      if (localStorage.getItem('theme') !== 'light') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
 
     <!-- Structured data - Person schema -->
     <script type="application/ld+json">
